@@ -1,0 +1,32 @@
+$primary: #1976d2;
+$primary-light: #63a4ff;
+$primary-dark: #004ba0;
+$gray-light: #eeeeee;
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table td,
+table th {
+  padding: 1.2rem;
+  vertical-align: top;
+  text-align: left;
+  border-top: 1px solid $gray-light;
+}
+
+.page {
+  padding: 0 0.16rem;
+  color: $primary;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.page:hover {
+  color: $primary-light;
+}
+
+.pagination .active {
+  color: $primary-dark;
+}
