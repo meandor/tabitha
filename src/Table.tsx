@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Pagination } from "./Pagination";
-import "./Table.scss";
+import "./Table.css";
 import { TableHeader } from "./TableHeader";
 import { order } from "./tableService";
 
