@@ -2,6 +2,16 @@
   "name": "tabby",
   "version": "0.1.0",
   "private": true,
+  "main": "build/dist/index.js",
+  "module": "build/dist/index.js",
+  "files": [
+    "build/dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meandor/tabby"
+  },
   "dependencies": {
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
@@ -9,8 +19,7 @@
     "react-scripts-ts": "3.1.0"
   },
   "scripts": {
-    "start": "react-scripts-ts start",
-    "build": "react-scripts-ts build",
+    "build": "rm -rf build && NODE_ENV=production tsc --build tsconfig.json && node-sass --recursive --output ./build/dist --source-map true --source-map-contents ./src",
     "test": "react-scripts-ts test --env=jsdom",
     "lint": "tslint --fix -c tslint.json -p ./",
     "format": "prettier --write src/**/*",
