@@ -24,8 +24,9 @@ export function TableHeader(
       </th>
     );
   }
+  const orderCallbackWrapper = () => orderCallback(id);
   return (
-    <th id={id} key={id} onClick={orderCallback(id)}>
+    <th id={id} key={id} onClick={orderCallbackWrapper}>
       {name}
       {sortSymbol(id, orderBy, ascending)}
     </th>

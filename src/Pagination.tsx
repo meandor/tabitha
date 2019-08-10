@@ -9,12 +9,12 @@ function paginationItem(
   if (activePage === currentPage) {
     pageClass += " active";
   }
-
+  const changePageFunctionWrapper = () => changePageFunction(currentPage);
   return (
     <span
       className={pageClass}
       key={currentPage}
-      onClick={changePageFunction(currentPage)}
+      onClick={changePageFunctionWrapper}
       role="presentation"
     >
       {currentPage}
