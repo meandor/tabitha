@@ -1,29 +1,35 @@
 import * as React from "react";
+import { Pagination } from "./Pagination";
 import "./Table.scss";
-import {Pagination} from "./Pagination";
-import {TableHeader} from "./TableHeader";
-import {order} from "./tableService";
+import { TableHeader } from "./TableHeader";
+import { order } from "./tableService";
 
-interface TableState {
-  orderBy: string,
-  ascending: boolean,
-  page: number
+interface ITableState {
+  orderBy: string;
+  ascending: boolean;
+  page: number;
 }
 
-interface TableProps {
-  elements: any[],
-  itemsPerPage: number,
-  tableId: string,
-  fields: any[],
-  rowRenderFunction: Function
+interface ITableProps {
+  elements: any[];
+  itemsPerPage: number;
+  tableId: string;
+  fields: any[];
+  rowRenderFunction: (element: any) => React.Component;
 }
 
-class Table extends React.Component<TableProps, TableState> {
+interface IField {
+  name: string;
+  id: string;
+  sortable: boolean;
+}
+
+export class Table extends React.Component<ITableProps, ITableState> {
   constructor(props: any) {
     super(props);
     this.state = {
-      orderBy: "id",
       ascending: true,
+      orderBy: "id",
       page: 1
     };
 
@@ -42,8 +48,8 @@ class Table extends React.Component<TableProps, TableState> {
       newAscending = !ascending;
     }
     this.setState({
-      orderBy: field,
-      ascending: newAscending
+      ascending: newAscending,
+      orderBy: field
     });
   }
 
@@ -58,13 +64,12 @@ class Table extends React.Component<TableProps, TableState> {
     } = this.props;
     return (
       <section id={tableId}>
-        {Pagination.component(elements.length, itemsPerPage, page, this.changePage)}
+        {Pagination(elements.length, itemsPerPage, page, this.changePage)}
         <table>
           <thead>
             <tr>
-              {fields.map(
-                (field: { name: string; id: string; sortable: boolean }) =>
-                  TableHeader.component(orderBy, ascending, this.changeOrderBy, field)
+              {fields.map((field: IField) =>
+                TableHeader(orderBy, ascending, this.changeOrderBy, field)
               )}
             </tr>
           </thead>
@@ -78,5 +83,3 @@ class Table extends React.Component<TableProps, TableState> {
     );
   }
 }
-
-export default Table;
