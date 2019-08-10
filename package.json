@@ -1,7 +1,7 @@
 {
-  "name": "tabby",
+  "name": "tabitha",
   "version": "0.1.0",
-  "private": true,
+  "license": "MIT",
   "main": "build/dist/index.js",
   "module": "build/dist/index.js",
   "files": [
@@ -10,8 +10,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/meandor/tabby"
+    "url": "git+ssh:///git@github.com:meandor/tabitha.git"
   },
+  "author": "Daniel Schruhl <danielschruhl@gmail.com>",
+  "homepage": "https://github.com/meandor/tabitha",
   "dependencies": {
     "prop-types": "^15.7.2",
     "react": "^16.9.0",

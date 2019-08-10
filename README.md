@@ -1,4 +1,4 @@
-# Tabby
+# Tabitha
 A React table component library.
 
 ## Test
