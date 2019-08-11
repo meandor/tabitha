@@ -27,7 +27,7 @@ export function TableHeader(
   const orderCallbackWrapper = () => orderCallback(id);
   return (
     <th id={id} key={id} onClick={orderCallbackWrapper}>
-      {name}
+      {`${name} `}
       {sortSymbol(id, orderBy, ascending)}
     </th>
   );
