@@ -1,0 +1,45 @@
+@import "variables";
+
+.button {
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  padding: 0.6rem 1.2rem;
+  font-size: $font-size-normal;
+  line-height: 2.4rem;
+  border-radius: 0.4rem;
+  box-sizing: border-box;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.button-primary {
+  color: $white;
+  background-color: $secondary;
+  border-color: $secondary-dark;
+
+  &:hover {
+    background-color: $secondary-dark;
+    border-color: $secondary-light;
+    color: $white;
+  }
+}
+
+.action-bar {
+  background: none;
+  border: none;
+  width: 100%;
+  box-shadow: none;
+
+  .button {
+    margin-right: 1.6rem;
+
+    .fas {
+      width: 15px;
+    }
+  }
+}

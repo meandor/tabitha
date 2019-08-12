@@ -18,13 +18,18 @@
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-scripts-ts": "3.1.0"
+    "react-scripts-ts": "3.1.0",
+    "winston": "^3.2.1"
   },
   "scripts": {
-    "build": "rm -rf build && NODE_ENV=production tsc --build tsconfig.json && node-sass --recursive --output ./build/dist --source-map true --source-map-contents ./src",
+    "build": "yarn build:clean && yarn build:transpile && yarn build:compile && yarn build:copy",
+    "build:clean": "rm -rf build",
+    "build:transpile": "NODE_ENV=production tsc --build tsconfig.json",
+    "build:compile": "node-sass --recursive --output ./build/dist/table --source-map true --source-map-contents ./src/table",
+    "build:copy": "cp src/*.scss ./build/dist",
     "test": "react-scripts-ts test --env=jsdom",
     "lint": "tslint --fix -c tslint.json -p ./",
-    "format": "prettier --write src/**/*",
+    "format": "prettier --write **/src/**",
     "eject": "react-scripts-ts eject"
   },
   "devDependencies": {

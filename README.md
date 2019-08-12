@@ -1,5 +1,5 @@
 # Tabitha
-A React table component library.
+A collection of common sass styles and React components to use for micro frontends.
 
 ## Test
 ```bash

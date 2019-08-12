@@ -1,0 +1,58 @@
+@import "variables";
+
+form {
+  margin-top: 2rem;
+}
+
+.group {
+  margin-bottom: 2.5rem;
+
+  label {
+    width: 100%;
+    display: block;
+    color: $secondary;
+    font-size: $font-size-small;
+    margin-bottom: 0.5rem;
+  }
+
+  input {
+    width: 100%;
+    font-size: $font-size-normal;
+    padding: 0.8rem;
+    border: 1px solid $gray-light;
+    border-radius: 0.25rem;
+  }
+
+  select {
+    width: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-size: $font-size-normal;
+    padding: 0.8rem;
+    border: 1px solid $gray-light;
+    border-radius: 0.25rem;
+  }
+
+  select::-ms-expand {
+    display: none;
+  }
+}
+
+.select {
+  position: relative;
+}
+
+.select:after {
+  content: "";
+  right: 1rem;
+  top: 3.8rem;
+  position: absolute;
+  pointer-events: none;
+  border: solid $black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
