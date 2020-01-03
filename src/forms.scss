@@ -57,3 +57,8 @@ form {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }
+
+hr {
+  border: none;
+  border-top: 0.1rem solid lighten($secondary, 45);
+}
