@@ -7,10 +7,9 @@ export function formatPrice(price: number) {
 export function formatDate(date: string, withTime = false) {
   if (date) {
     const dateObject = new Date(date);
-    let formattedDate = `${dateObject
-      .getDate()
-      .toString()
-      .padStart(2, "0")}.${(dateObject.getMonth() + 1)
+    let formattedDate = `${dateObject.getDate().toString().padStart(2, "0")}.${(
+      dateObject.getMonth() + 1
+    )
       .toString()
       .padStart(2, "0")}.${dateObject.getFullYear()}`;
     if (withTime) {

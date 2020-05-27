@@ -13,7 +13,7 @@ describe("Pagination", () => {
     const actual = TableHeader("foo", true, orderCallback, {
       id: "foo",
       name: "foo",
-      sortable: false
+      sortable: false,
     });
     const { getByText, findByText } = render(
       <table>
@@ -38,7 +38,7 @@ describe("Pagination", () => {
     const actual = TableHeader("foo", true, orderCallback, {
       id: "foo",
       name: "foo",
-      sortable: true
+      sortable: true,
     });
     const { getByText, findByText } = render(
       <table>

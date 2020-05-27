@@ -30,7 +30,7 @@ export class Table extends React.Component<ITableProps, ITableState> {
     this.state = {
       ascending: true,
       orderBy: "id",
-      page: 1
+      page: 1,
     };
 
     this.changePage = this.changePage.bind(this);
@@ -49,7 +49,7 @@ export class Table extends React.Component<ITableProps, ITableState> {
     }
     this.setState({
       ascending: newAscending,
-      orderBy: field
+      orderBy: field,
     });
   }
 
@@ -60,7 +60,7 @@ export class Table extends React.Component<ITableProps, ITableState> {
       itemsPerPage,
       tableId,
       fields,
-      rowRenderFunction
+      rowRenderFunction,
     } = this.props;
     return (
       <section id={tableId}>
